@@ -3,11 +3,13 @@ using namespace std;
 
 void a_ocjene();
 void b_natjecanje();
+void c_artefakt();
 
 int main()
 {
     //a_ocjene();
-    b_natjecanje();
+    //b_natjecanje();
+    c_artefakt();
 
     return 0;
 }
@@ -46,4 +48,33 @@ void b_natjecanje() {
             cout << i + 1 << " ";
         }
     }
+}
+
+void c_artefakt() {
+    int n, pi; cin >> n;
+    int p[10];
+
+    int najmanji = 101;
+    bool jedinstven = false;
+
+
+    for (int i = 0;i < n;i++) {
+        cin >> p[i];
+    }
+
+    for (int i = 0;i < n;i++) {
+        if (p[i] < najmanji) {
+            jedinstven = true;
+            for (int j = 0;j < n;j++) {
+                if (p[i] == p[j] && i != j) {
+                    jedinstven = false;
+                }
+            }
+            if (jedinstven) {
+                najmanji = p[i];
+            }
+
+        }
+    }
+    cout << najmanji;
 }
