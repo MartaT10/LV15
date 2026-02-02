@@ -2,10 +2,12 @@
 using namespace std;
 
 void a_ocjene();
+void b_natjecanje();
 
 int main()
 {
-    a_ocjene();
+    //a_ocjene();
+    b_natjecanje();
 
     return 0;
 }
@@ -29,4 +31,19 @@ void a_ocjene() {
         else cout << "ISTO ";
     }
 
+}
+
+void b_natjecanje() {
+    int n, k; cin >> n >> k;
+    int bodovi[100];
+
+    for (int i = 0;i < n;i++) {
+        cin >> bodovi[i];
+    }
+
+    for (int i = 0;i < n;i++) {
+        if (bodovi[i] > bodovi[k - 1]) {
+            cout << i + 1 << " ";
+        }
+    }
 }
