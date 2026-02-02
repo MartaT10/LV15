@@ -4,12 +4,14 @@ using namespace std;
 void a_ocjene();
 void b_natjecanje();
 void c_artefakt();
+void d_orehnjaca();
 
 int main()
 {
     //a_ocjene();
     //b_natjecanje();
-    c_artefakt();
+    //c_artefakt();
+    d_orehnjaca();
 
     return 0;
 }
@@ -51,7 +53,7 @@ void b_natjecanje() {
 }
 
 void c_artefakt() {
-    int n, pi; cin >> n;
+    int n; cin >> n;
     int p[10];
 
     int najmanji = 101;
@@ -77,4 +79,32 @@ void c_artefakt() {
         }
     }
     cout << najmanji;
+}
+
+void d_orehnjaca() {
+    int l, n, p, k; cin >> l >> n;
+    int orehnjaca[1000] = {0};
+    int izlaza = 0, najvecia = 0, izlazb = 0, najvecib = 0, brojac;
+
+    for (int i = 1;i <= n;i++) {
+        cin >> p >> k;
+        if (k - p > najvecia) {
+            najvecia = k - p;
+            izlaza = i;
+        }
+
+        brojac = 0;
+        for (int j = p - 1;j < k;j++) {
+            if (orehnjaca[j] == 0) {
+                brojac++;
+                orehnjaca[j] = i;
+            }
+        }
+
+        if (brojac > najvecib) {
+            najvecib = brojac;
+            izlazb = i;
+        }
+    }
+    cout << izlaza << endl << izlazb;
 }
