@@ -5,13 +5,17 @@ void a_ocjene();
 void b_natjecanje();
 void c_artefakt();
 void d_orehnjaca();
+void e_brojevi();
 
 int main()
 {
+    //Marta Topolnjak 1.RM
+
     //a_ocjene();
     //b_natjecanje();
     //c_artefakt();
-    d_orehnjaca();
+    //d_orehnjaca();
+    //e_brojevi();
 
     return 0;
 }
@@ -107,4 +111,23 @@ void d_orehnjaca() {
         }
     }
     cout << izlaza << endl << izlazb;
+}
+
+void e_brojevi() {
+    int n, broj; cin >> n;
+    int najveci = 0;
+    int skoro_najveci = 0;
+
+    for (int i=0; i < n;i++) {
+        cin >> broj;
+        
+        if (broj > najveci) {
+            skoro_najveci = najveci;
+            najveci = broj;
+        }
+        else if (broj < najveci && broj > skoro_najveci) {
+            skoro_najveci = broj;
+        }
+    }
+    cout << skoro_najveci;
 }
